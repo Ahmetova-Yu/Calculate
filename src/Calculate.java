@@ -1,10 +1,12 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Calculate {
     private JFrame frame;
     private JTextField field;
+    private JTextField textField;
     private JButton[] numBut = new JButton[0];
     private JButton addBut, subBut, mulBut, divBut, equalBut, clearBut;
     private double num1 = 0, num2 = 0, result = 0;
@@ -16,7 +18,7 @@ public class Calculate {
         frame.setSize(420, 500);
         frame.setLayout(null);
 
-        JTextField textField = new JTextField();
+        textField = new JTextField();
         textField.setBounds(50, 25, 300, 50);
         textField.setFont(new Font("Arial", Font.PLAIN, 30));
         textField.setEditable(false);
@@ -78,5 +80,63 @@ public class Calculate {
         addBut.setBounds(305, 355, 75, 75);
 
         frame.setVisible(false);
+    }
+
+    public void actionPerfomed(ActionEvent e) {
+        for (int i = 0; i < 10; i++) {
+            if (e.getSource() == numBut[i]) {
+                textField.setText(textField.getText().concat(String.valueOf(i)));
+
+            }
+        }
+
+        if (e.getSource() == addBut) {
+            num1 = Double.parseDouble(textField.getText());
+            operator = '+';
+            textField.setText("");
+        }
+
+        if (e.getSource() == subBut) {
+            num1 = Double.parseDouble(textField.getText());
+            operator = '-';
+            textField.setText("");
+        }
+
+        if (e.getSource() == divBut) {
+            num1 = Double.parseDouble(textField.getText());
+            operator = '/';
+            textField.setText("");
+        }
+
+        if (e.getSource() == mulBut) {
+            num1 = Double.parseDouble(textField.getText());
+            operator = '*';
+            textField.setText("");
+        }
+
+        if (e.getSource() == equalBut) {
+            switch (operator) {
+                case '+':
+                    result = num1 + num2;
+                    break;
+                case '-':
+                    result = num1 - num2;
+                case '*':
+                    result = num1 * num2;
+                    break;
+                case '/':
+                    if (num2 != 0) result = num1 / num2;
+                    else System.out.println("Нельзя делить на 0!");
+                    break;
+            }
+            textField.setText(String.valueOf(result));
+        }
+
+        if (e.getSource() == clearBut) {
+            textField.setText("");
+            num1 = 0;
+            num2 = 0;
+            result = 0;
+        }
     }
 }
