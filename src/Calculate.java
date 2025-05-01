@@ -67,7 +67,7 @@ public class Calculate implements ActionListener {
         numBut[4].setBounds(50, 185, 75, 75);
         numBut[5].setBounds(135, 185, 75, 75);
         numBut[6].setBounds(220, 185, 75, 75);
-        mulBut.setBounds(305, 270, 75, 75);
+        mulBut.setBounds(305, 185, 75, 75);
 
         numBut[1].setBounds(50, 270, 75, 75);
         numBut[2].setBounds(135, 270, 75, 75);
@@ -116,6 +116,7 @@ public class Calculate implements ActionListener {
         }
 
         if (e.getSource() == equalBut) {
+            num2 = Double.parseDouble(textField.getText());
             switch (operator) {
                 case '+':
                     result = num1 + num2;
