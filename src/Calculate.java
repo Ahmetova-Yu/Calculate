@@ -15,11 +15,12 @@ public class Calculate implements ActionListener {
     public Calculate() {
         frame = new JFrame("Калькулятор");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(420, 500);
+        frame.setSize(345, 535);
         frame.setLayout(null);
 
         textField = new JTextField();
-        textField.setBounds(50, 25, 300, 50);
+        textField.setBounds(50, 25, 300, 30);
+        textField.setBorder(javax.swing.BorderFactory.createEmptyBorder());
         textField.setFont(new Font("Arial", Font.PLAIN, 30));
         textField.setEditable(false);
         frame.add(textField);
@@ -59,25 +60,25 @@ public class Calculate implements ActionListener {
         frame.add(equalBut);
         frame.add(clearBut);
 
-        numBut[7].setBounds(50, 100, 75, 75);
-        numBut[8].setBounds(135, 100, 75, 75);
-        numBut[9].setBounds(220, 100, 75, 75);
-        divBut.setBounds(305, 100, 75, 75);
+        numBut[7].setBounds(30, 100, 55, 55);
+        numBut[8].setBounds(100, 100, 55, 55);
+        numBut[9].setBounds(170, 100, 55, 55);
+        divBut.setBounds(245, 100, 55, 55);
 
-        numBut[4].setBounds(50, 185, 75, 75);
-        numBut[5].setBounds(135, 185, 75, 75);
-        numBut[6].setBounds(220, 185, 75, 75);
-        mulBut.setBounds(305, 185, 75, 75);
+        numBut[4].setBounds(30, 185, 55, 55);
+        numBut[5].setBounds(100, 185, 55, 55);
+        numBut[6].setBounds(170, 185, 55, 55);
+        mulBut.setBounds(245, 185, 55, 55);
 
-        numBut[1].setBounds(50, 270, 75, 75);
-        numBut[2].setBounds(135, 270, 75, 75);
-        numBut[3].setBounds(220, 270, 75, 75);
-        subBut.setBounds(305, 270, 75, 75);
+        numBut[1].setBounds(30, 270, 55, 55);
+        numBut[2].setBounds(100, 270, 55, 55);
+        numBut[3].setBounds(170, 270, 55, 55);
+        subBut.setBounds(245, 270, 55, 55);
 
-        numBut[0].setBounds(50, 355, 75, 75);
-        clearBut.setBounds(135, 355, 75, 75);
-        equalBut.setBounds(220, 355, 75, 75);
-        addBut.setBounds(305, 355, 75, 75);
+        numBut[0].setBounds(30, 355, 55, 55);
+        clearBut.setBounds(100, 355, 55, 55);
+        equalBut.setBounds(170, 355, 55, 55);
+        addBut.setBounds(245, 355, 55, 55);
 
         frame.setVisible(true);
     }
