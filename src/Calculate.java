@@ -3,11 +3,11 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Calculate {
+public class Calculate implements ActionListener {
     private JFrame frame;
     private JTextField field;
     private JTextField textField;
-    private JButton[] numBut = new JButton[0];
+    private JButton[] numBut = new JButton[10];
     private JButton addBut, subBut, mulBut, divBut, equalBut, clearBut;
     private double num1 = 0, num2 = 0, result = 0;
     private char operator;
@@ -79,10 +79,11 @@ public class Calculate {
         equalBut.setBounds(220, 355, 75, 75);
         addBut.setBounds(305, 355, 75, 75);
 
-        frame.setVisible(false);
+        frame.setVisible(true);
     }
 
-    public void actionPerfomed(ActionEvent e) {
+    @Override
+    public void actionPerformed(ActionEvent e) {
         for (int i = 0; i < 10; i++) {
             if (e.getSource() == numBut[i]) {
                 textField.setText(textField.getText().concat(String.valueOf(i)));
