@@ -80,7 +80,7 @@ public class Calculate implements ActionListener {
         equalBut.setBounds(170, 355, 55, 55);
         addBut.setBounds(245, 355, 55, 55);
 
-        frame.setVisible(true);
+        frame.setVisible(false);
     }
 
     @Override
